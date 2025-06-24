@@ -10,6 +10,7 @@ import Contact from '../pages/Contact'
 import Dashboard from '../pages/Dashboard'
 import VehicleDetails from '../pages/VehicleDetails'
 import App from '../App'
+import ProtectedRoute from '../components/ProtectedRoute'
 
 const rootRoute = createRootRoute({
   component: App,
@@ -66,7 +67,12 @@ const contactRoute = createRoute({
 const dashboardRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/dashboard',
-  component: Dashboard,
+  component: () => {
+    <ProtectedRoute>
+      <Dashboard />
+    </ProtectedRoute>
+  }
+    ,
 })
 
 const vehicleDetailsRoute = createRoute({

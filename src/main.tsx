@@ -1,16 +1,18 @@
 import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
+import ReactDOM from 'react-dom/client';
 import './index.css';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { queryClient } from './queryClient.ts';
 import { RouterProvider } from '@tanstack/react-router';
 import { router } from './routes/index.tsx';
+import { withGoogleAuthProvider } from "./lib/google";
 
-createRoot(document.getElementById('root')!).render(
+ReactDOM.createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router}/>
+      {withGoogleAuthProvider(
+        <RouterProvider router={router} />
+      )}
     </QueryClientProvider>
-    
   </StrictMode>
 );
