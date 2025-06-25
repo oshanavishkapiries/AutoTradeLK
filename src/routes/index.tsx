@@ -6,7 +6,6 @@ import {
 
 import Home from '../pages/Home';
 import Login from '../pages/Login';
-import Register from '../pages/SignUp';
 import Browse from '../pages/Browse';
 import PostAd from '../pages/PostAd';
 import Leasing from '../pages/Leasing';
@@ -16,6 +15,7 @@ import Dashboard from '../pages/Dashboard';
 import VehicleDetails from '../pages/VehicleDetails';
 import ProtectedRoute from '../components/ProtectedRoute';
 import Layout from '../layouts/Layout';
+import SignUp from '../pages/SignUp';
 
 const rootRoute = createRootRoute({
   component: Layout,
@@ -35,7 +35,7 @@ const routeTree = rootRoute.addChildren([
   createRoute({
     getParentRoute: () => rootRoute,
     path: '/signup',
-    component: Register,
+    component: SignUp,
   }),
   createRoute({
     getParentRoute: () => rootRoute,

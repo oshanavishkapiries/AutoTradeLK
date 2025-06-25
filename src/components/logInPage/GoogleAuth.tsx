@@ -10,7 +10,7 @@ const GoogleAuth = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex justify-center mt-10">
+    <div className="flex justify-center mt-2">
       <GoogleLogin
         onSuccess={async (credentialResponse) => {
           try {
