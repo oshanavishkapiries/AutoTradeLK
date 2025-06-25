@@ -1,6 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Search, Car, Bike, Truck, Shield, Users, MapPin, Star, ArrowRight, CheckCircle } from 'lucide-react';
+import { Car, Bike, Truck, Shield, Users, MapPin, Star } from 'lucide-react';
+import PopularCategories from '../components/homePage/PopularCategories';
+import SearchBar from '../components/homePage/SearchBar';
+import LatestListing from '../components/homePage/LatestListing';
+import AutoTradeLK from '../components/homePage/AutoTradeLK';
+import CallToAction from '../components/homePage/CallToAction';
 
 const Home = () => {
   const categories = [
