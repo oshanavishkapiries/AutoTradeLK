@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Search, Car, Bike, Truck, Shield, Users, MapPin, Star, ArrowRight, CheckCircle } from 'lucide-react';
