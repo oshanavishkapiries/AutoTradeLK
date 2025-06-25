@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { Eye, EyeOff, Car, Mail, Lock, User, Phone } from 'lucide-react';
+import { Link } from '@tanstack/react-router';
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);

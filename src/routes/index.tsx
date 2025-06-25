@@ -1,103 +1,87 @@
-import { createRootRoute, createRoute, createRouter } from '@tanstack/react-router'
-import Home from '../pages/Home'
-import Login from '../pages/Login'
-import Register from '../pages/Register'
-import Browse from '../pages/Browse'
-import PostAd from '../pages/PostAd'
-import Leasing from '../pages/Leasing'
-import Blog from '../pages/Blog'
-import Contact from '../pages/Contact'
-import Dashboard from '../pages/Dashboard'
-import VehicleDetails from '../pages/VehicleDetails'
-import App from '../App'
-import ProtectedRoute from '../components/ProtectedRoute'
+import {
+  createRootRoute,
+  createRoute,
+  createRouter,
+} from '@tanstack/react-router';
+
+import Home from '../pages/Home';
+import Login from '../pages/Login';
+import Register from '../pages/SignUp';
+import Browse from '../pages/Browse';
+import PostAd from '../pages/PostAd';
+import Leasing from '../pages/Leasing';
+import Blog from '../pages/Blog';
+import Contact from '../pages/Contact';
+import Dashboard from '../pages/Dashboard';
+import VehicleDetails from '../pages/VehicleDetails';
+import ProtectedRoute from '../components/ProtectedRoute';
+import Layout from '../layouts/Layout';
 
 const rootRoute = createRootRoute({
-  component: App,
-})
-
-const homeRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: '/',
-  component: Home,
-})
-
-const loginRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: '/login',
-  component: Login,
-})
-
-const registerRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: '/signup',
-  component: Register,
-})
-
-const browseRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: '/browse',
-  component: Browse,
-})
-
-const postAdRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: '/post-ad',
-  component: PostAd,
-})
-
-const leasingRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: '/leasing',
-  component: Leasing,
-})
-
-const blogRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: '/blog',
-  component: Blog,
-})
-
-const contactRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: '/contact',
-  component: Contact,
-})
-
-const dashboardRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: '/dashboard',
-  component: () => {
-    <ProtectedRoute>
-      <Dashboard />
-    </ProtectedRoute>
-  }
-    ,
-})
-
-const vehicleDetailsRoute = createRoute({
-  getParentRoute: () => rootRoute,
-  path: '/vehicle/:id',
-  component: VehicleDetails,
-})
+  component: Layout,
+});
 
 const routeTree = rootRoute.addChildren([
-  homeRoute,
-  loginRoute,
-  registerRoute,
-  browseRoute,
-  postAdRoute,
-  leasingRoute,
-  blogRoute,
-  contactRoute,
-  dashboardRoute,
-  vehicleDetailsRoute,
-])
+  createRoute({
+    getParentRoute: () => rootRoute,
+    path: '/',
+    component: Home,
+  }),
+  createRoute({
+    getParentRoute: () => rootRoute,
+    path: '/login',
+    component: Login,
+  }),
+  createRoute({
+    getParentRoute: () => rootRoute,
+    path: '/signup',
+    component: Register,
+  }),
+  createRoute({
+    getParentRoute: () => rootRoute,
+    path: '/browse',
+    component: Browse,
+  }),
+  createRoute({
+    getParentRoute: () => rootRoute,
+    path: '/post-ad',
+    component: PostAd,
+  }),
+  createRoute({
+    getParentRoute: () => rootRoute,
+    path: '/leasing',
+    component: Leasing,
+  }),
+  createRoute({
+    getParentRoute: () => rootRoute,
+    path: '/blog',
+    component: Blog,
+  }),
+  createRoute({
+    getParentRoute: () => rootRoute,
+    path: '/contact',
+    component: Contact,
+  }),
+  createRoute({
+    getParentRoute: () => rootRoute,
+    path: '/dashboard',
+    component: () => (
+      <ProtectedRoute>
+        <Dashboard />
+      </ProtectedRoute>
+    ),
+  }),
+  createRoute({
+    getParentRoute: () => rootRoute,
+    path: '/vehicle/:id',
+    component: VehicleDetails,
+  }),
+]);
 
-export const router = createRouter({ routeTree })
+export const router = createRouter({ routeTree });
 
 declare module '@tanstack/react-router' {
   interface Register {
-    router: typeof router
+    router: typeof router;
   }
 }
