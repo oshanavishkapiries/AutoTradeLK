@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Car, Heart, User, CreditCard, LogOut, Plus, Edit, Trash2, Eye, Calendar, MapPin } from 'lucide-react';
 
 const Dashboard = () => {
