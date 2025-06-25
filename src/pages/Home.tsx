@@ -1,4 +1,3 @@
-import React from 'react';
 import { Car, Bike, Truck, Shield, Users, MapPin, Star } from 'lucide-react';
 import PopularCategories from '../components/homePage/PopularCategories';
 import SearchBar from '../components/homePage/SearchBar';
