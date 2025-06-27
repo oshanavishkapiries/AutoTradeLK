@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Eye, EyeOff, Car, Mail, Lock, User, Phone } from 'lucide-react';
-import { Link } from '@tanstack/react-router';
 import GoogleAuth from '../components/logInPage/GoogleAuth';
+import { Link } from 'react-router-dom';
 
 const SignUp = () => {
   

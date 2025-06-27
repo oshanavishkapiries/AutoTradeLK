@@ -106,48 +106,6 @@ const Blog = () => {
           </p>
         </div>
 
-        {/* Featured Post */}
-        <div className="bg-white rounded-lg shadow-sm overflow-hidden mb-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2">
-            <div className="relative">
-              <img
-                src={featuredPost.image}
-                alt={featuredPost.title}
-                className="w-full h-64 lg:h-full object-cover"
-              />
-              <div className="absolute top-4 left-4">
-                <span className="bg-primary-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-                  Featured
-                </span>
-              </div>
-            </div>
-            <div className="p-8 flex flex-col justify-center">
-              <div className="flex items-center space-x-4 text-sm text-gray-600 mb-3">
-                <span className="bg-primary-100 text-primary-800 px-2 py-1 rounded text-xs font-medium">
-                  {featuredPost.category}
-                </span>
-                <div className="flex items-center space-x-1">
-                  <Calendar className="h-4 w-4" />
-                  <span>{featuredPost.date}</span>
-                </div>
-                <span>{featuredPost.readTime}</span>
-              </div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">{featuredPost.title}</h2>
-              <p className="text-gray-700 mb-6 leading-relaxed">{featuredPost.excerpt}</p>
-              <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-2">
-                  <User className="h-4 w-4 text-gray-400" />
-                  <span className="text-sm text-gray-600">{featuredPost.author}</span>
-                </div>
-                <button className="bg-primary-600 text-white px-6 py-2 rounded-lg hover:bg-primary-700 transition-colors flex items-center space-x-2">
-                  <span>Read More</span>
-                  <ArrowRight className="h-4 w-4" />
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {/* Main Content */}
           <div className="lg:col-span-3">
